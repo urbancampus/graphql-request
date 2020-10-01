@@ -9,9 +9,10 @@ export { ClientError } from './types'
 const resolveHeaders = (headers: RequestInit['headers']): Record<string, string> => {
   let oHeaders: Record<string, string> = {}
   if (headers) {
-    if (headers instanceof Headers) {
-      oHeaders = HeadersInstanceToPlainObject(headers)
-    } else if (headers instanceof Array) {
+    // if (headers instanceof Headers) {
+    //   oHeaders = HeadersInstanceToPlainObject(headers)
+    // } else 
+    if (headers instanceof Array) {
       headers.forEach(([name, value]) => {
         oHeaders[name] = value
       })
